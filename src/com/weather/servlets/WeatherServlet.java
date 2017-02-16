@@ -61,7 +61,6 @@ public class WeatherServlet extends HttpServlet {
 		String apiURLCel = request.getServletContext().getInitParameter("WEATHER_URL_CEL");
 		String farResult = getResultsFromWaeatherAPI(apiURLFar,apiID,cityName);
 		String celResult = getResultsFromWaeatherAPI(apiURLCel,apiID,cityName);
-		//String result = getResultsFromJSON();
 		
 		WeatherData farData = getWeatherData(farResult);
 		WeatherData celData = getWeatherData(celResult);
@@ -69,8 +68,6 @@ public class WeatherServlet extends HttpServlet {
         calendar.setTimeInMillis(Long.parseLong(farData.getDt().toString()));
         String date = simpleDateFormat.format(calendar.getTime());
 		
-		//PrintWriter out = response.getWriter();
-		//out.print("<html><body>Hello CHetan"+ cityName +"</body></html>");
 		request.setAttribute("farData", farData);
 		request.setAttribute("celData", celData);
 		request.setAttribute("date", date);
@@ -88,7 +85,7 @@ public class WeatherServlet extends HttpServlet {
 		JSONObject wind = data.getJSONObject("wind");
 		wd.setMinTemp(main.getDouble("temp_min"));
 		wd.setMaxTemp(main.getDouble("temp_max"));
-		//wd.setSunrise(sys.getLong("sunrise"));
+		//wd.setSunrise(sys.getLong("sunrise")); // commented due to data is not coming in Jason response
 		//wd.setSunset(sys.getLong("sunset"));
 		JSONObject summary = wa.getJSONObject(0);
 		wd.setSummary(summary.getString("description"));

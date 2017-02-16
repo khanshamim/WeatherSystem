@@ -33,6 +33,18 @@ You can set data-country attribute for input to search cities only for selected 
 <input id="city" name="city" autocomplete="off" data-country="ru">
 ```
 
-===============================
+==============================
+
+#openweathermap API
+
+API URL - 
+http://api.openweathermap.org/data/2.5/find?q=London&units=imperial&appid=9cc54577343b5d8fab1803ba915d3594  
+
+units=imperial //Fahrenheit 
+units=metric //Celsius
+
+========================
+
+
 
 
