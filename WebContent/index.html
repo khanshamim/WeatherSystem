@@ -62,45 +62,7 @@
 		</div>
 
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="js/jquery.city-autocomplete.js" type="text/javascript"></script>
-		<script>
-			$('input#city').cityAutocomplete();
-			$('#city').bind("enterKey", function(e) {
-				//sendCityData();
-			});
-			$('#city').keyup(function(e) {
-				if (e.keyCode == 13) {
-					$(this).trigger("enterKey");
-				}
-			});
-
-			$('#btnSubmit').on('click', function(e) {
-				//  e.stopPropagation();
-				//  sendCityData();
-			});
-
-			function sendCityData(city) {
-				var city = $('#city').val();
-				if (city == '' || city == null) {
-					//do nothing
-				} else {
-					$.ajax({
-						url : "http://servlet/weather",
-						processData : false,
-						contentType : false,
-						type : 'POST',
-						data : {
-							q : city
-						},
-						success : function(data) {
-							console.log(data);
-						}
-					});
-				}
-			}
-		</script>
-
-
+		<script src="js/jquery.city-autocomplete.js" type="text/javascript"></script
 	</div>
 </body>
 </html>
